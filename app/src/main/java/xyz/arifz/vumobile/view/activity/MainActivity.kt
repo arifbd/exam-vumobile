@@ -1,7 +1,6 @@
 package xyz.arifz.vumobile.view.activity
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -12,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import xyz.arifz.vumobile.R
 import xyz.arifz.vumobile.data.dto.User
 import xyz.arifz.vumobile.databinding.ActivityMainBinding
+import xyz.arifz.vumobile.utils.fullScreenImageDialog
 import xyz.arifz.vumobile.view.adapters.UserRecycleAdapter
 import xyz.arifz.vumobile.view.base.ScrollingRecyclerActivity
 import xyz.arifz.vumobile.viewmodel.MainViewModel
@@ -73,7 +73,7 @@ class MainActivity : ScrollingRecyclerActivity() {
     }
 
     private fun userItemClicked(user: User?) {
-        Toast.makeText(this, "$user", Toast.LENGTH_SHORT).show()
+        user?.avatar?.fullScreenImageDialog(this)
     }
 
 }
