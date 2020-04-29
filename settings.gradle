@@ -1,0 +1,2 @@
+rootProject.name='vumobile'
+include ':app'
